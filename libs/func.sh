@@ -42,12 +42,23 @@
 function configure(){
     # 解压包
     cfg_pkg=$1
+
     # 解压目录
     cfg_pressDir=$2
+
     # 查找解压目录正则表达式
     cfg_findRegex=$3
+
     # configure配置参数
     cfg_args=$4
+
+    # 获取安装软件名
+    pkgName=$(echo $4|awk -F ' {1,}' '{print $1}')
+    pkgName=${pkgName##*/}
+
+    # 获取根目录
+    baseDir=${2%tar*}
+
     # 解压源码包
     if [[ ${cfg_pkg##*.} = "gz" ]]
     then
@@ -65,5 +76,6 @@ function configure(){
     ./configure $cfg_args
 
     #编译
-    make && make install
+    make 1> "${baseDir}/logs/${pkgName}_install.log"
+    make install 1> "${baseDir}/logs/${pkgName}_install.log"
 }

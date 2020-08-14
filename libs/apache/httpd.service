@@ -1,0 +1,11 @@
+[Unit]
+Description=Start httpd
+
+[Service]
+Type=simple
+ExecStart=/etc/rc.d/init.d/httpd -k start -DFOREGROUND
+ExecReload=/etc/rc.d/init.d/httpd -k graceful
+ExecStop=/bin/kill -WINCH ${MAINPID}
+
+[Install]
+WantedBy=multi-user.target
