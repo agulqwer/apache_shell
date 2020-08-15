@@ -4,10 +4,13 @@
     function getCode(){
         # 本地查找目录
         getCodeDir=$1
+
         # 线上文件下载目录
         getCodeDown=$2
+
         # 获取线上文件路径
         getCodeUrl=$3
+
         # 匹配文件正则表达式
         getCodeRegex=$4
 
@@ -20,21 +23,21 @@
             # 下载线上版本
             wget -P $getCodeDown $getCodeUrl
             getCodeTmp=${getCodeUrl##*/}
-            echo $(find $getCodeDir -name $getCodeTmp)
+            httpdPkg=$(find $getCodeDir -name $getCodeTmp)
         else
             if [[ ${#getCodes[@]} -eq 1 ]]
             then
                 # 本地只有一个源码包
-                echo ${getCodes[0]}
+                httpdPkg=${getCodes[0]}
             else
-                echo "选择httpd版本"
+                echo -e "\033[33mYou have ${#getCodes[@]} package for select\033[0m"
                 select name in ${getCodes[@]}
                 do
-                    echo $name
+                    httpdPkg=$name
                     break
                 done
             fi
-        fi
+       fi
     }
 
 

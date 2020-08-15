@@ -1,0 +1,12 @@
+Making all in xml/expat
+make[1]: 进入目录“/root/gitStore/apache/tar/apr-util-1.3.12/xml/expat”
+make[1]: 对“all”无需做任何事。
+make[1]: 离开目录“/root/gitStore/apache/tar/apr-util-1.3.12/xml/expat”
+make[1]: 进入目录“/root/gitStore/apache/tar/apr-util-1.3.12”
+make[1]: 对“local-all”无需做任何事。
+make[1]: 离开目录“/root/gitStore/apache/tar/apr-util-1.3.12”
+/usr/local/apr/build-1/mkdir.sh /usr/local/apr-util/include/apr-1 /usr/local/apr-util/lib/pkgconfig \
+	     /usr/local/apr-util/lib /usr/local/apr-util/bin
+for f in /root/gitStore/apache/tar/apr-util-1.3.12/include/*.h /root/gitStore/apache/tar/apr-util-1.3.12/include/*.h; do \
+	/usr/bin/install -c -m 644 ${f} /usr/local/apr-util/include/apr-1; \
+done

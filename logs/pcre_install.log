@@ -1,0 +1,128 @@
+make  install-am
+make[1]: 进入目录“/root/gitStore/apache/tar/pcre-8.35”
+make[2]: 进入目录“/root/gitStore/apache/tar/pcre-8.35”
+ /usr/bin/mkdir -p '/usr/local/pcre/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libpcre.la libpcreposix.la libpcrecpp.la '/usr/local/pcre/lib'
+libtool: install: /usr/bin/install -c .libs/libpcre.so.1.2.3 /usr/local/pcre/lib/libpcre.so.1.2.3
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcre.so.1.2.3 libpcre.so.1 || { rm -f libpcre.so.1 && ln -s libpcre.so.1.2.3 libpcre.so.1; }; })
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcre.so.1.2.3 libpcre.so || { rm -f libpcre.so && ln -s libpcre.so.1.2.3 libpcre.so; }; })
+libtool: install: /usr/bin/install -c .libs/libpcre.lai /usr/local/pcre/lib/libpcre.la
+libtool: install: (cd /root/gitStore/apache/tar/pcre-8.35; /bin/sh /root/gitStore/apache/tar/pcre-8.35/libtool  --silent --tag CC --mode=relink gcc -fvisibility=hidden -g -O2 -version-info 0:2:0 -o libpcreposix.la -rpath /usr/local/pcre/lib libpcreposix_la-pcreposix.lo libpcre.la )
+libtool: install: /usr/bin/install -c .libs/libpcreposix.so.0.0.2T /usr/local/pcre/lib/libpcreposix.so.0.0.2
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcreposix.so.0.0.2 libpcreposix.so.0 || { rm -f libpcreposix.so.0 && ln -s libpcreposix.so.0.0.2 libpcreposix.so.0; }; })
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcreposix.so.0.0.2 libpcreposix.so || { rm -f libpcreposix.so && ln -s libpcreposix.so.0.0.2 libpcreposix.so; }; })
+libtool: install: /usr/bin/install -c .libs/libpcreposix.lai /usr/local/pcre/lib/libpcreposix.la
+libtool: install: (cd /root/gitStore/apache/tar/pcre-8.35; /bin/sh /root/gitStore/apache/tar/pcre-8.35/libtool  --silent --tag CXX --mode=relink g++ -fvisibility=hidden -fvisibility-inlines-hidden -O2 -version-info 0:0:0 -o libpcrecpp.la -rpath /usr/local/pcre/lib libpcrecpp_la-pcrecpp.lo libpcrecpp_la-pcre_scanner.lo libpcrecpp_la-pcre_stringpiece.lo libpcre.la )
+libtool: install: /usr/bin/install -c .libs/libpcrecpp.so.0.0.0T /usr/local/pcre/lib/libpcrecpp.so.0.0.0
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcrecpp.so.0.0.0 libpcrecpp.so.0 || { rm -f libpcrecpp.so.0 && ln -s libpcrecpp.so.0.0.0 libpcrecpp.so.0; }; })
+libtool: install: (cd /usr/local/pcre/lib && { ln -s -f libpcrecpp.so.0.0.0 libpcrecpp.so || { rm -f libpcrecpp.so && ln -s libpcrecpp.so.0.0.0 libpcrecpp.so; }; })
+libtool: install: /usr/bin/install -c .libs/libpcrecpp.lai /usr/local/pcre/lib/libpcrecpp.la
+libtool: install: /usr/bin/install -c .libs/libpcre.a /usr/local/pcre/lib/libpcre.a
+libtool: install: chmod 644 /usr/local/pcre/lib/libpcre.a
+libtool: install: ranlib /usr/local/pcre/lib/libpcre.a
+libtool: install: /usr/bin/install -c .libs/libpcreposix.a /usr/local/pcre/lib/libpcreposix.a
+libtool: install: chmod 644 /usr/local/pcre/lib/libpcreposix.a
+libtool: install: ranlib /usr/local/pcre/lib/libpcreposix.a
+libtool: install: /usr/bin/install -c .libs/libpcrecpp.a /usr/local/pcre/lib/libpcrecpp.a
+libtool: install: chmod 644 /usr/local/pcre/lib/libpcrecpp.a
+libtool: install: ranlib /usr/local/pcre/lib/libpcrecpp.a
+libtool: finish: PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/usr/local/mysql/bin:/usr/local/expect/bin:/usr/local//expect/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/usr/local/apache/bin:/root/bin:/root/mybin:/sbin" ldconfig -n /usr/local/pcre/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /usr/local/pcre/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/usr/local/pcre/bin'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c pcretest pcregrep '/usr/local/pcre/bin'
+libtool: install: /usr/bin/install -c .libs/pcretest /usr/local/pcre/bin/pcretest
+libtool: install: /usr/bin/install -c .libs/pcregrep /usr/local/pcre/bin/pcregrep
+ /usr/bin/mkdir -p '/usr/local/pcre/bin'
+ /usr/bin/install -c pcre-config '/usr/local/pcre/bin'
+ /usr/bin/mkdir -p '/usr/local/pcre/share/doc/pcre'
+ /usr/bin/install -c -m 644 doc/pcre.txt doc/pcre-config.txt doc/pcregrep.txt doc/pcretest.txt AUTHORS COPYING ChangeLog LICENCE NEWS README '/usr/local/pcre/share/doc/pcre'
+ /usr/bin/mkdir -p '/usr/local/pcre/share/doc/pcre/html'
+ /usr/bin/install -c -m 644 doc/html/NON-AUTOTOOLS-BUILD.txt doc/html/README.txt doc/html/index.html doc/html/pcre-config.html doc/html/pcre.html doc/html/pcre16.html doc/html/pcre32.html doc/html/pcre_assign_jit_stack.html doc/html/pcre_compile.html doc/html/pcre_compile2.html doc/html/pcre_config.html doc/html/pcre_copy_named_substring.html doc/html/pcre_copy_substring.html doc/html/pcre_dfa_exec.html doc/html/pcre_exec.html doc/html/pcre_free_study.html doc/html/pcre_free_substring.html doc/html/pcre_free_substring_list.html doc/html/pcre_fullinfo.html doc/html/pcre_get_named_substring.html doc/html/pcre_get_stringnumber.html doc/html/pcre_get_stringtable_entries.html doc/html/pcre_get_substring.html doc/html/pcre_get_substring_list.html doc/html/pcre_jit_exec.html doc/html/pcre_jit_stack_alloc.html doc/html/pcre_jit_stack_free.html doc/html/pcre_maketables.html doc/html/pcre_pattern_to_host_byte_order.html doc/html/pcre_refcount.html doc/html/pcre_study.html doc/html/pcre_utf16_to_host_byte_order.html doc/html/pcre_utf32_to_host_byte_order.html doc/html/pcre_version.html doc/html/pcreapi.html doc/html/pcrebuild.html doc/html/pcrecallout.html doc/html/pcrecompat.html doc/html/pcredemo.html doc/html/pcregrep.html '/usr/local/pcre/share/doc/pcre/html'
+ /usr/bin/install -c -m 644 doc/html/pcrejit.html doc/html/pcrelimits.html doc/html/pcrematching.html doc/html/pcrepartial.html doc/html/pcrepattern.html doc/html/pcreperform.html doc/html/pcreposix.html doc/html/pcreprecompile.html doc/html/pcresample.html doc/html/pcrestack.html doc/html/pcresyntax.html doc/html/pcretest.html doc/html/pcreunicode.html '/usr/local/pcre/share/doc/pcre/html'
+ /usr/bin/mkdir -p '/usr/local/pcre/share/doc/pcre/html'
+ /usr/bin/install -c -m 644 doc/html/pcrecpp.html '/usr/local/pcre/share/doc/pcre/html'
+ /usr/bin/mkdir -p '/usr/local/pcre/include'
+ /usr/bin/install -c -m 644 pcreposix.h pcrecpp.h pcre_scanner.h '/usr/local/pcre/include'
+ /usr/bin/mkdir -p '/usr/local/pcre/share/man/man1'
+ /usr/bin/install -c -m 644 doc/pcre-config.1 doc/pcregrep.1 doc/pcretest.1 '/usr/local/pcre/share/man/man1'
+ /usr/bin/mkdir -p '/usr/local/pcre/share/man/man3'
+ /usr/bin/install -c -m 644 doc/pcre.3 doc/pcre16.3 doc/pcre32.3 doc/pcre_assign_jit_stack.3 doc/pcre_compile.3 doc/pcre_compile2.3 doc/pcre_config.3 doc/pcre_copy_named_substring.3 doc/pcre_copy_substring.3 doc/pcre_dfa_exec.3 doc/pcre_exec.3 doc/pcre_free_study.3 doc/pcre_free_substring.3 doc/pcre_free_substring_list.3 doc/pcre_fullinfo.3 doc/pcre_get_named_substring.3 doc/pcre_get_stringnumber.3 doc/pcre_get_stringtable_entries.3 doc/pcre_get_substring.3 doc/pcre_get_substring_list.3 doc/pcre_jit_exec.3 doc/pcre_jit_stack_alloc.3 doc/pcre_jit_stack_free.3 doc/pcre_maketables.3 doc/pcre_pattern_to_host_byte_order.3 doc/pcre_refcount.3 doc/pcre_study.3 doc/pcre_utf16_to_host_byte_order.3 doc/pcre_utf32_to_host_byte_order.3 doc/pcre_version.3 doc/pcreapi.3 doc/pcrebuild.3 doc/pcrecallout.3 doc/pcrecompat.3 doc/pcredemo.3 doc/pcrejit.3 doc/pcrelimits.3 doc/pcrematching.3 doc/pcrepartial.3 doc/pcrepattern.3 '/usr/local/pcre/share/man/man3'
+ /usr/bin/install -c -m 644 doc/pcreperform.3 doc/pcreposix.3 doc/pcreprecompile.3 doc/pcresample.3 doc/pcrestack.3 doc/pcresyntax.3 doc/pcreunicode.3 doc/pcrecpp.3 '/usr/local/pcre/share/man/man3'
+ /usr/bin/mkdir -p '/usr/local/pcre/include'
+ /usr/bin/install -c -m 644 pcre.h pcrecpparg.h pcre_stringpiece.h '/usr/local/pcre/include'
+ /usr/bin/mkdir -p '/usr/local/pcre/lib/pkgconfig'
+ /usr/bin/install -c -m 644 libpcre.pc libpcreposix.pc libpcrecpp.pc '/usr/local/pcre/lib/pkgconfig'
+make  install-data-hook
+make[3]: 进入目录“/root/gitStore/apache/tar/pcre-8.35”
+ln -sf pcre_assign_jit_stack.3		 /usr/local/pcre/share/man/man3/pcre16_assign_jit_stack.3
+ln -sf pcre_compile.3			 /usr/local/pcre/share/man/man3/pcre16_compile.3
+ln -sf pcre_compile2.3			 /usr/local/pcre/share/man/man3/pcre16_compile2.3
+ln -sf pcre_config.3			 /usr/local/pcre/share/man/man3/pcre16_config.3
+ln -sf pcre_copy_named_substring.3	 /usr/local/pcre/share/man/man3/pcre16_copy_named_substring.3
+ln -sf pcre_copy_substring.3		 /usr/local/pcre/share/man/man3/pcre16_copy_substring.3
+ln -sf pcre_dfa_exec.3			 /usr/local/pcre/share/man/man3/pcre16_dfa_exec.3
+ln -sf pcre_exec.3			 /usr/local/pcre/share/man/man3/pcre16_exec.3
+ln -sf pcre_free_study.3		 /usr/local/pcre/share/man/man3/pcre16_free_study.3
+ln -sf pcre_free_substring.3		 /usr/local/pcre/share/man/man3/pcre16_free_substring.3
+ln -sf pcre_free_substring_list.3	 /usr/local/pcre/share/man/man3/pcre16_free_substring_list.3
+ln -sf pcre_fullinfo.3			 /usr/local/pcre/share/man/man3/pcre16_fullinfo.3
+ln -sf pcre_get_named_substring.3	 /usr/local/pcre/share/man/man3/pcre16_get_named_substring.3
+ln -sf pcre_get_stringnumber.3		 /usr/local/pcre/share/man/man3/pcre16_get_stringnumber.3
+ln -sf pcre_get_stringtable_entries.3	 /usr/local/pcre/share/man/man3/pcre16_get_stringtable_entries.3
+ln -sf pcre_get_substring.3		 /usr/local/pcre/share/man/man3/pcre16_get_substring.3
+ln -sf pcre_get_substring_list.3	 /usr/local/pcre/share/man/man3/pcre16_get_substring_list.3
+ln -sf pcre_jit_exec.3			 /usr/local/pcre/share/man/man3/pcre16_jit_exec.3
+ln -sf pcre_jit_stack_alloc.3		 /usr/local/pcre/share/man/man3/pcre16_jit_stack_alloc.3
+ln -sf pcre_jit_stack_free.3		 /usr/local/pcre/share/man/man3/pcre16_jit_stack_free.3
+ln -sf pcre_maketables.3		 /usr/local/pcre/share/man/man3/pcre16_maketables.3
+ln -sf pcre_pattern_to_host_byte_order.3 /usr/local/pcre/share/man/man3/pcre16_pattern_to_host_byte_order.3
+ln -sf pcre_refcount.3			 /usr/local/pcre/share/man/man3/pcre16_refcount.3
+ln -sf pcre_study.3			 /usr/local/pcre/share/man/man3/pcre16_study.3
+ln -sf pcre_utf16_to_host_byte_order.3	 /usr/local/pcre/share/man/man3/pcre16_utf16_to_host_byte_order.3
+ln -sf pcre_version.3			 /usr/local/pcre/share/man/man3/pcre16_version.3
+ln -sf pcre_assign_jit_stack.3		 /usr/local/pcre/share/man/man3/pcre32_assign_jit_stack.3
+ln -sf pcre_compile.3			 /usr/local/pcre/share/man/man3/pcre32_compile.3
+ln -sf pcre_compile2.3			 /usr/local/pcre/share/man/man3/pcre32_compile2.3
+ln -sf pcre_config.3			 /usr/local/pcre/share/man/man3/pcre32_config.3
+ln -sf pcre_copy_named_substring.3	 /usr/local/pcre/share/man/man3/pcre32_copy_named_substring.3
+ln -sf pcre_copy_substring.3		 /usr/local/pcre/share/man/man3/pcre32_copy_substring.3
+ln -sf pcre_dfa_exec.3			 /usr/local/pcre/share/man/man3/pcre32_dfa_exec.3
+ln -sf pcre_exec.3			 /usr/local/pcre/share/man/man3/pcre32_exec.3
+ln -sf pcre_free_study.3		 /usr/local/pcre/share/man/man3/pcre32_free_study.3
+ln -sf pcre_free_substring.3		 /usr/local/pcre/share/man/man3/pcre32_free_substring.3
+ln -sf pcre_free_substring_list.3	 /usr/local/pcre/share/man/man3/pcre32_free_substring_list.3
+ln -sf pcre_fullinfo.3			 /usr/local/pcre/share/man/man3/pcre32_fullinfo.3
+ln -sf pcre_get_named_substring.3	 /usr/local/pcre/share/man/man3/pcre32_get_named_substring.3
+ln -sf pcre_get_stringnumber.3		 /usr/local/pcre/share/man/man3/pcre32_get_stringnumber.3
+ln -sf pcre_get_stringtable_entries.3	 /usr/local/pcre/share/man/man3/pcre32_get_stringtable_entries.3
+ln -sf pcre_get_substring.3		 /usr/local/pcre/share/man/man3/pcre32_get_substring.3
+ln -sf pcre_get_substring_list.3	 /usr/local/pcre/share/man/man3/pcre32_get_substring_list.3
+ln -sf pcre_jit_exec.3			 /usr/local/pcre/share/man/man3/pcre32_jit_exec.3
+ln -sf pcre_jit_stack_alloc.3		 /usr/local/pcre/share/man/man3/pcre32_jit_stack_alloc.3
+ln -sf pcre_jit_stack_free.3		 /usr/local/pcre/share/man/man3/pcre32_jit_stack_free.3
+ln -sf pcre_maketables.3		 /usr/local/pcre/share/man/man3/pcre32_maketables.3
+ln -sf pcre_pattern_to_host_byte_order.3 /usr/local/pcre/share/man/man3/pcre32_pattern_to_host_byte_order.3
+ln -sf pcre_refcount.3			 /usr/local/pcre/share/man/man3/pcre32_refcount.3
+ln -sf pcre_study.3			 /usr/local/pcre/share/man/man3/pcre32_study.3
+ln -sf pcre_utf32_to_host_byte_order.3	 /usr/local/pcre/share/man/man3/pcre32_utf32_to_host_byte_order.3
+ln -sf pcre_version.3			 /usr/local/pcre/share/man/man3/pcre32_version.3
+make[3]: 离开目录“/root/gitStore/apache/tar/pcre-8.35”
+make[2]: 离开目录“/root/gitStore/apache/tar/pcre-8.35”
+make[1]: 离开目录“/root/gitStore/apache/tar/pcre-8.35”

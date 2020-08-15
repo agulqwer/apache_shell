@@ -1,5 +1,19 @@
 #/bin/bash
 
+echo -e  "\033[33m+----------------------------------------------------------------------+\033[0m"
+echo -e  "\033[33m|       Apache v1.0.0 for Centos Linux Server, Written by Licess       |\033[0m"
+echo -e  "\033[33m+----------------------------------------------------------------------+\033[0m"
+echo -e  "\033[33m+                         httpd 2.4                                    +\033[0m"
+echo -e  "\033[33m+----------------------------------------------------------------------+\033[0m"
+echo -e  "\033[33m+           A tool to auto-compile & install Apache on Linux           +\033[0m"
+echo -e  "\033[33m+----------------------------------------------------------------------+\033[0m"
+
+# 输入安装目录
+echo "------------------------------------------------------------------------"
+echo "------------------------------------------------------------------------"
+echo -e "\033[33mPlease enter the installation directory\033[0m"
+read prefixDir
+
 # 变量
 baseDir=$(pwd)
 httpdDownUrl="https://mirrors.bfsu.edu.cn/httpd//httpd/httpd-2.4.46.tar.gz"
@@ -9,18 +23,16 @@ rm $baseDir"/tar/*" -rf
 
 # 删日志目录下的日志文件
 rm "${baseDir}/logs/*" -rf
-# 输入安装目录
-echo "-----------------------"
-echo "-----------------------"
-echo "输入安装目录"
-read prefixDir
+
+
+# 获取httpd源码包路径并解压
+. libs/func.sh
+getCode $baseDir $baseDir"/source" $httpdDownUrl ".*httpd.*.tar[.gz]*" "Apache"
+
+echo -e "\033[33mYou have selected ${httpdPkg}\033[0m"
 
 # 检查依赖
 ./libs/deps.sh $baseDir $prefixDir
-
-# 获取httpd源码包路径
-. libs/func.sh
-httpdPkg=$(getCode $baseDir $baseDir"/source" $httpdDownUrl ".*httpd.*.tar[.gz]*") 
 
 configure $httpdPkg $baseDir"/tar" ".*/tar/httpd[^/]*" "--prefix=${prefixDir}/apache --with-apr=${prefixDir}/apr --with-apr-util=${prefixDir}/apr-util --with-pcre=${prefixDir}/pcre"
 
