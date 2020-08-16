@@ -1,7 +1,5 @@
 #!/bin/bash
 
-baseDir=$1
-prefixDir=$2
 # 安装依赖
 deps=("gcc" "gcc-c++"  "make" "wget")
 for i in ${deps[@]}
@@ -12,26 +10,42 @@ do
     fi
 done
 
-. libs/func.sh
-# 安装apr
-# 线上源码路径
-aprDownUrl="http://archive.apache.org/dist/apr/apr-1.5.2.tar.gz"
-aprPkg=$(getCode $baseDir "${baseDir}/source" $aprDownUrl ".*apr[0-9\.-]+.tar[.gz]*" "Apr")
+# 安装依赖库
+# 定义依赖数组
+declare -A depsName
+declare -A depsFunc
 
-# 编译安装
-configure $aprPkg "${baseDir}/tar" ".*/tar/apr[0-9\.-]+" "--prefix=${prefixDir}/apr"
+depsName["apr"]=$aprInstallName
+depsName["apr_util"]=$aprUtilInstallName
+depsName["pcre"]=$pcreInstallName
 
-# 安装apr-util
-aprUtilDownUrl="http://archive.apache.org/dist/apr/apr-util-1.3.12.tar.gz"
-aprUtilPkg=$(getCode $baseDir "${baseDir}/source" $aprUtilDownUrl ".*apr.*util[0-9\.-]+.tar[.gz]*" "Apr-util")
+depsFunc["apr"]="installApr"
+depsFunc["apr_util"]="installAprUtil"
+depsFunc["pcre"]="installPcre"
 
-# 编译安装
-configure $aprUtilPkg "$baseDir/tar" ".*/tar/apr.*util[0-9\.-]+" "--prefix=${prefixDir}/apr-util --with-apr=${prefixDir}/apr/bin/apr-1-config"
+for key in ${!depsName[*]}
+do
+    # 检查安装目录下是否已经存在该程序
+    if [[  -d "${prefixDir}/${depsName[$key]}" ]]
+    then
+        echo -e "\033[31mDo you want to re install ${key}? [Y/n]:\033[0m"
+        while read  isCover
+        do
+            if [[ -z $isCover ]] || [[ -n $(echo $sCover|egrep -i "^(yes|y)$") ]]
+            then
+                # 覆盖，重新安装apr
+                ${depsFunc[$key]}
+                break
+            elif [[ -z $(echo $isCover|egrep -i "^(no|n)$") ]]
+            then
+                # 不覆盖安装apr
+                break
+            fi
+        done
 
-# 安装pcre库
-pcreDownUrl="http://jaist.dl.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz"
-pcrePkg=$(getCode $baseDir "$baseDir/source" $pcreDownUrl ".*pcre[0-9\.-]+.tar[.gz]*" "Pcre")
-
-# 编译安装
-configure $pcrePkg "$baseDir/tar" ".*/tar/pcre[0-9\.-]+" "--prefix=${prefixDir}/pcre --with-apr=${prefixDir}/apr/bin/apr-1-config"
+    else
+        # 安装apr
+        ${depsFunc[$key]}
+    fi
+done
 
